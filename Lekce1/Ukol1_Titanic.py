@@ -18,3 +18,11 @@ print(df_titanic_pivot1)
 
 # df_titanic_pivot2 = pandas.pivot_table(df_titanic, index="Sex", columns="Pclass", values="Survived", aggfunc=len(Survived))
 # print(df_titanic_pivot2)
+
+df_titanic["age_group"] = pandas.cut(df_titanic["Age"], bins=[0, 12, 20, 26, 80])
+print(df_titanic.head())
+
+print(df_titanic["Age"].max())
+
+df_titanic_pivot3 = pandas.pivot_table(df_titanic, index="Sex", columns="age_group", values="Survived",aggfunc=numpy.sum)
+print(df_titanic_pivot3)

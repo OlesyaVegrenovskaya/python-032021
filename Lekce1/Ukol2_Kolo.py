@@ -3,7 +3,7 @@ import pandas
 import numpy
 
 r = requests.get("https://raw.githubusercontent.com/pesikj/progr2-python/master/data/london_merged.csv")
-open("../london_merged.csv", 'wb').write(r.content)
+open("london_merged.csv", 'wb').write(r.content)
 
 df_London_bicycle_rental = pandas.read_csv("london_merged.csv")
 print(df_London_bicycle_rental.columns)
